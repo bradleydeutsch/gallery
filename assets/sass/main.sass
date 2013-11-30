@@ -1,0 +1,90 @@
+@import compass/utilities
+@import compass/css3
+
++global-reset
+
+/***** Page Default *****/
+
+*
+	outline: none
+
+body
+	font: 105% Calibri, Sans-serif
+	color: #696969
+
+/***** Structure *****/
+
+div#wrapper
+	padding: 20px
+
+/***** Fonts *****/
+
+a
+	text-decoration: none
+	color: #696969
+	&#scrollToTop
+		+rotate(90deg)
+		+transition-property(opacity, text-indent)
+		+transition-duration(300ms, 0s)
+		+transition-delay(300ms, 0s)
+		position: fixed
+		top: 25px
+		right: 25px
+		font-size: 6em
+		line-height: 0.5em
+		z-index: 100
+		&.hidden
+			+transition-duration(300ms, 0s)
+			+transition-delay(0s, 300ms)
+			+opacity(0)
+			text-indent: -9999px
+
+p
+	text-align: center
+	margin-bottom: 20px
+
+h1
+	margin-bottom: 20px
+	text-align: center
+	font-size: 2em
+
+h2
+	text-align: center
+	font-size: 1.5em
+
+/***** Content *****/
+
+div#gallery
+	margin: 0 auto
+	position: relative
+	div.image
+		+transition(all 500ms ease-in-out)
+		+transform(rotate(-180deg))
+		+perspective(1000)
+		position: absolute
+		top: -1000px
+		left: -1000px
+		div.flipper
+			+transition(500ms)
+			+transform-style(preserve-3d)
+			border: 1px solid #696969
+			> div
+				+backface-visibility(hidden)
+				&.imageDescription
+					+transform(rotateY(180deg))
+					display: table
+					position: absolute
+					background: #eee
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+					div
+						display: table-cell
+						vertical-align: middle
+		&:hover div.flipper
+			+transform(rotateY(180deg))
+
+/***** Browser Hacks *****/
+
+//@media screen and (-webkit-min-device-pixel-ratio: 0)

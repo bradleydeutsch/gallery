@@ -1,0 +1,201 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/**** Page Default **** */
+* {
+  outline: none;
+}
+
+body {
+  font: 105% Calibri, Sans-serif;
+  color: dimgrey;
+}
+
+/**** Structure **** */
+div#wrapper {
+  padding: 20px;
+}
+
+/**** Fonts **** */
+a {
+  text-decoration: none;
+  color: dimgrey;
+}
+a#scrollToTop {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transition-property: opacity, text-indent;
+  -moz-transition-property: opacity, text-indent;
+  -o-transition-property: opacity, text-indent;
+  transition-property: opacity, text-indent;
+  -webkit-transition-duration: 300ms, 0s;
+  -moz-transition-duration: 300ms, 0s;
+  -o-transition-duration: 300ms, 0s;
+  transition-duration: 300ms, 0s;
+  -webkit-transition-delay: 300ms, 0s;
+  -moz-transition-delay: 300ms, 0s;
+  -o-transition-delay: 300ms, 0s;
+  transition-delay: 300ms, 0s;
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  font-size: 6em;
+  line-height: 0.5em;
+  z-index: 100;
+}
+a#scrollToTop.hidden {
+  -webkit-transition-duration: 300ms, 0s;
+  -moz-transition-duration: 300ms, 0s;
+  -o-transition-duration: 300ms, 0s;
+  transition-duration: 300ms, 0s;
+  -webkit-transition-delay: 0s, 300ms;
+  -moz-transition-delay: 0s, 300ms;
+  -o-transition-delay: 0s, 300ms;
+  transition-delay: 0s, 300ms;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  text-indent: -9999px;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2em;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+/**** Content **** */
+div#gallery {
+  margin: 0 auto;
+  position: relative;
+}
+div#gallery div.image {
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+}
+div#gallery div.image div.flipper {
+  -webkit-transition: 500ms;
+  -moz-transition: 500ms;
+  -o-transition: 500ms;
+  transition: 500ms;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  border: 1px solid dimgrey;
+}
+div#gallery div.image div.flipper > div {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+div#gallery div.image div.flipper > div.imageDescription {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  display: table;
+  position: absolute;
+  background: #eeeeee;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+div#gallery div.image div.flipper > div.imageDescription div {
+  display: table-cell;
+  vertical-align: middle;
+}
+div#gallery div.image:hover div.flipper {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+/**** Browser Hacks **** */

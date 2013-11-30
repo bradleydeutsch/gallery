@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Resizable Gallery</title>
+		
+		<link rel="stylesheet" href="assets/css/main.css" type="text/css" media="all" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<h1>Resizable Gallery</h1>
+			
+			<a href="#" id="scrollToTop" class="hidden">&laquo;</a>
+			
+			<p>This is a resizeable gallery, set to toggle the number of columns based on browser window width. A width of greater than 1800 will produce 6 columns, 1500-1800px = 5 columns, 1000-1500px = 4 colummns. Default is 3 columns.</p>
+			
+			<div id="gallery" />
+		</div>
+		
+		<script type="text/template" id="image-template">
+			<div id="image-<%= id %>" class="image">
+				<div class="flipper" style="width: <%= width %>px; height: <%= height %>px;">
+					<div class="imageContent">
+						<img src="<%= src %>" width="<%= width %>" height="<%= height %>" />
+					</div>
+					<div class="imageDescription">
+						<div>
+							<h2><a href="#">Image #<%= id %></a></h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</script>
+		
+		<script type="text/javascript" src="assets/js/jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="assets/js/underscore-1.5.2.min.js"></script>
+		<script type="text/javascript" src="assets/js/script.js"></script>
+		<script type="text/javascript" src="assets/js/data.js"></script>
+	</body>
+</html>
